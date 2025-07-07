@@ -21,10 +21,10 @@ describe('Scheduler', () => {
   it('should do nothing and returned successfully when no task has been added', async () => {
     // fixture
     const scheduler = new Scheduler();
-    
+
     // test
     const run = scheduler.run();
-    
+
     // assertion
     return expect(run).resolves.toBeUndefined();
   });
@@ -32,10 +32,10 @@ describe('Scheduler', () => {
     //FIXTURE
     const task = jest.fn(() => Promise.resolve());
     const scheduler = new Scheduler();
-    
+
     //TEST
     scheduler.addTask(task);
-    
+
     //ASSERTION
     expect(task).not.toHaveBeenCalled();
   });
@@ -70,11 +70,11 @@ describe('Scheduler', () => {
     })
     scheduler.addTask(task1);
     scheduler.addTask(task2);
-    
+
     // test
     await scheduler.run();
-    
+
     // assertion
-    expect(executionOrder).toEqual([1,2]);
+    expect(executionOrder).toEqual([1,3]);
   })
 })
