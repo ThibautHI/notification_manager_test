@@ -75,6 +75,6 @@ describe('Scheduler', () => {
     await scheduler.run();
 
     // assertion
-    expect(executionOrder).toEqual([1,3]);
+    expect(executionOrder).toEqual([1,2]);
   })
 })
